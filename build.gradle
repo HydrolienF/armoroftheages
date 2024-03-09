@@ -6,8 +6,8 @@ plugins {
 }
 
 version = "${minecraft_version}-${mod_version}"
-group = 'com.dawnoftime.dotarmorweapons' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'dawnoftime_armor_weapons'
+group = 'com.dawnoftime.armoroftheages' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'armor_of_the_ages'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -23,7 +23,7 @@ minecraft {
     // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
     //
     // Parchment is an unofficial project maintained by ParchmentMC, separate from MinecraftForge
-    // Additional setup is needed to use their mappings: https://parchmentmc.org/docs/getting-started
+    // Additional setup is needed to use their mappings: https://github.com/ParchmentMC/Parchment/wiki/Getting-Started
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
@@ -50,10 +50,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'dotarmorweapons'
+            property 'forge.enabledGameTestNamespaces', 'armoroftheages'
 
             mods {
-                dotarmorweapons {
+                armoroftheages {
                     source sourceSets.main
                 }
             }
@@ -66,10 +66,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'dotarmorweapons'
+            property 'forge.enabledGameTestNamespaces', 'armoroftheages'
 
             mods {
-                dotarmorweapons {
+                armoroftheages {
                     source sourceSets.main
                 }
             }
@@ -85,10 +85,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', "dotarmorweapons"
+            property 'forge.enabledGameTestNamespaces', "armoroftheages"
 
             mods {
-                dotarmorweapons {
+                armoroftheages {
                     source sourceSets.main
                 }
             }
@@ -102,7 +102,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', "dotarmorweapons", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', "armoroftheages", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 examplemod {
@@ -133,6 +133,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:' + minecraft_version + '-' + forge_version
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
+    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
+    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
     // Examples using mod jars from ./libs
@@ -147,12 +149,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "dotarmorweapons",
-                "Specification-Vendor"    : "dotarmorweapons",
+                "Specification-Title"     : "armoroftheages",
+                "Specification-Vendor"    : "armoroftheages",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "examplemodsareus",
+                "Implementation-Vendor"   : "armoroftheages",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
