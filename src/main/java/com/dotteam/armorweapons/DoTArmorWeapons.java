@@ -1,10 +1,13 @@
 package com.dotteam.armorweapons;
 
+import com.dotteam.armorweapons.registry.DoTAWArmorSetsRegistry;
 import com.dotteam.armorweapons.registry.DoTAWItemsRegistry;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Map;
@@ -24,8 +27,13 @@ public class DoTArmorWeapons {
         modEventBus.addListener(HandlerCommon::registerCreativeModeTabs);
         modEventBus.addListener(HandlerCommon::setDotTab);
         // modEventBus.addListener(HandlerClient::entityRenderers);
-
         modEventBus.addListener(this::createCreativeTab);
+
+        DoTAWArmorSetsRegistry.register();
+
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            modEventBus.addListener(DoTAWArmorSetsRegistry::onLayerRegister);
+        }
     }
 
     public void createCreativeTab(CreativeModeTabEvent.BuildContents event) {

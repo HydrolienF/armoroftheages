@@ -1,4 +1,4 @@
-/*
+package com.dotteam.armorweapons.set.todo;/*
 package com.dotteam.armorweapons.model.todo;
 
 import net.minecraft.client.model.geom.ModelPart;

@@ -1,15 +1,14 @@
 package com.dotteam.armorweapons.util;
 
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
 
