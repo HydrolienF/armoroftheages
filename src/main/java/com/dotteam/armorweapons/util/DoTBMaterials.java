@@ -76,17 +76,22 @@ public class DoTBMaterials {
 
 		@Override
 		public int getDurabilityForType(ArmorItem.Type slot) {
-			return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getSlot().getIndex()] * this.armorConfig.durabilitySupplier().get();
+			//return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getSlot().getIndex()] * this.armorConfig.durabilitySupplier().get();
+			//TODO: fix config
+			return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getSlot().getIndex()] * 10;
 		}
 
 		@Override
 		public int getDefenseForType(ArmorItem.Type slot) {
+			/*
 			return switch (slot) {
 				case BOOTS -> this.armorConfig.feetDefSupplier().get();
 				case LEGGINGS -> this.armorConfig.legsDefSupplier().get();
 				case CHESTPLATE -> this.armorConfig.chestDefSupplier().get();
 				case HELMET -> this.armorConfig.helmetDefSupplier().get();
-			};
+			};*/
+			//TODO: fix config
+			return 2;
 		}
 
 		@Override
@@ -113,7 +118,8 @@ public class DoTBMaterials {
 
 		@Override
 		public float getToughness() {
-			return this.armorConfig.toughnessSupplier().get();
+			//return this.armorConfig.toughnessSupplier().get();
+			return 0;
 		}
 
 		@Override

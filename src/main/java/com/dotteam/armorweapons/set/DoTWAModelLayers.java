@@ -1,4 +1,4 @@
-package com.dotteam.armorweapons.model;
+package com.dotteam.armorweapons.set;
 
 import com.google.common.collect.Sets;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -27,9 +27,9 @@ public class DoTWAModelLayers {
         }
     }
 
-    private static ModelLayerLocation createLocation(String pPath) {
-        return
-    }
+    //private static ModelLayerLocation createLocation(String pPath) {
+    //    return
+    //}
     public static Stream<ModelLayerLocation> getKnownLocations() {
         return ALL_MODELS.stream();
     }
