@@ -14,11 +14,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
 public class CenturionArmorSet extends ArmorSet {
+	private LivingEntity living;
 
 	public CenturionArmorSet(String id) { super(id); }
 
 	@Override
 	public Model getModel(ModelPart root, LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel<?> defaultModel) {
+		this.living = living;
 		return new Model(root, slot);
 	}
 
@@ -28,8 +30,8 @@ public class CenturionArmorSet extends ArmorSet {
 		MeshDefinition mesh = super.getMesh(slot).orElseThrow();
 		PartDefinition root = mesh.getRoot();
 
-		// TODO get this info from somewhere else
-		boolean isSteve = true;
+		// Not working for now.
+		boolean isSteve = !isSlimPlayerEntity(living);
 
 		switch (slot) {
 			//@formatter:off

@@ -63,13 +63,12 @@ public abstract class ArmorSet {
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        if (entity instanceof AbstractClientPlayer playerEntity) {
-            if ("slim".equals(playerEntity.getModelName())) {
-                return MOD_ID + ":textures/models/armor/" + this.name + "_slim.png";
-            }
+        if (isSlimPlayerEntity(entity)) {
+            return MOD_ID + ":textures/models/armor/" + this.name + "_slim.png";
+        } else {
+            return MOD_ID + ":textures/models/armor/" + this.name + ".png";
         }
 
-        return MOD_ID + ":textures/models/armor/" + this.name + ".png";
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -83,11 +82,11 @@ public abstract class ArmorSet {
     /**
      * Checks if the entity in parameter has Alex model or not.
      * 
-     * @param living is the entity to study.
+     * @param entity is the entity to study.
      * @return True if the entity has Alex model, False if it has Steve model.
      */
-    private boolean isSlimPlayerEntity(LivingEntity living) {
-        return living instanceof AbstractClientPlayer player && "slim".equals(player.getModelName());
+    protected boolean isSlimPlayerEntity(Entity entity) {
+        return entity instanceof AbstractClientPlayer player && "slim".equals(player.getModelName());
     }
 
     @OnlyIn(Dist.CLIENT)
