@@ -1,19 +1,17 @@
 package com.dotteam.armorweapons.registry;
 
+import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
+import static com.dotteam.armorweapons.util.DoTBMaterials.DoTArmorMaterial.JAPANESE_LIGHT;
+import java.util.function.Supplier;
 import com.dotteam.armorweapons.item.HatItem;
 import com.dotteam.armorweapons.item.HumanoidArmorItem;
 import com.dotteam.armorweapons.item.ItemDoTAW;
-import net.minecraft.world.item.ArmorItem.Type;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.function.Supplier;
-
-import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
-import static com.dotteam.armorweapons.util.DoTBMaterials.DoTArmorMaterial.JAPANESE_LIGHT;
 
 public class DoTAWItemsRegistry {
 
@@ -24,11 +22,11 @@ public class DoTAWItemsRegistry {
 	public static final RegistryObject<Item> BAMBOO_HAT = DoTAWItemsRegistry.reg("bamboo_hat", HatItem::new);
 
 	public static final RegistryObject<HumanoidArmorItem> JAPANESE_LIGHT_ARMOR_HEAD = DoTAWItemsRegistry.ITEMS.register("japanese_light_armor_head", () -> {
-		return new HumanoidArmorItem(DoTAWArmorSetsRegistry.JAPANESE_LIGHT_ARMOR, JAPANESE_LIGHT, Type.HELMET);
+		return new HumanoidArmorItem(DoTAWArmorSetsRegistry.JAPANESE_LIGHT_ARMOR, JAPANESE_LIGHT, EquipmentSlot.HEAD);
 	});
 
 	public static final RegistryObject<HumanoidArmorItem> JAPANESE_LIGHT_ARMOR_CHEST = DoTAWItemsRegistry.ITEMS.register("japanese_light_armor_chest", () -> {
-		return new HumanoidArmorItem(DoTAWArmorSetsRegistry.JAPANESE_LIGHT_ARMOR, JAPANESE_LIGHT, Type.CHESTPLATE);
+		return new HumanoidArmorItem(DoTAWArmorSetsRegistry.JAPANESE_LIGHT_ARMOR, JAPANESE_LIGHT, EquipmentSlot.CHEST);
 	});
 
 	//public static final ArmorSetRegistryObject ANUBIS_ARMOR_SET = new ArmorSetRegistryObject("anubis_armor", RAIJIN, () -> AnubisModel::new);

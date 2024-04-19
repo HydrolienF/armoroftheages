@@ -1,16 +1,15 @@
 package com.dotteam.armorweapons;
 
+import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
 import com.dotteam.armorweapons.registry.DoTAWItemsRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
+// import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-
-import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class HandlerCommon {

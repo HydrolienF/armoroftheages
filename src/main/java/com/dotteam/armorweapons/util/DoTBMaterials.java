@@ -1,18 +1,18 @@
 package com.dotteam.armorweapons.util;
 
+import java.util.function.Supplier;
+import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import com.dotteam.armorweapons.DoTAWConfig;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Supplier;
 
 public class DoTBMaterials {
 
@@ -75,14 +75,15 @@ public class DoTBMaterials {
 		}
 
 		@Override
-		public int getDurabilityForType(ArmorItem.Type slot) {
+		public int getDurabilityForSlot(@Nonnull EquipmentSlot slot) {
 			//return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getSlot().getIndex()] * this.armorConfig.durabilitySupplier().get();
 			//TODO: fix config
-			return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getSlot().getIndex()] * 10;
+			// TODO check that index are the same
+			return DoTArmorMaterial.MAX_DAMAGE_ARRAY[slot.getIndex()] * 10;
 		}
 
 		@Override
-		public int getDefenseForType(ArmorItem.Type slot) {
+		public int getDefenseForSlot(@Nonnull EquipmentSlot slot) {
 			/*
 			return switch (slot) {
 				case BOOTS -> this.armorConfig.feetDefSupplier().get();
