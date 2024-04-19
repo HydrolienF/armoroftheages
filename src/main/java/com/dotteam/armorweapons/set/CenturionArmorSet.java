@@ -31,7 +31,8 @@ public class CenturionArmorSet extends ArmorSet {
 		PartDefinition root = mesh.getRoot();
 
 		// Not working for now.
-		boolean isSteve = !isSlimPlayerEntity(living);
+		// boolean isSteve = !isSlimPlayerEntity(living);
+		boolean isSteve = false;
 
 		switch (slot) {
 			//@formatter:off
@@ -63,9 +64,8 @@ public class CenturionArmorSet extends ArmorSet {
 
 				body.addOrReplaceChild("chestBelt",
 						CubeListBuilder.create()
-								.texOffs(24, 29).addBox(0.0F, -1.0F, 0.0F, 2.0F, 10.0F, 5.0F, new CubeDeformation(0.2F))
-								.texOffs(74, 12).addBox(-1.0F, -2.0F, 0.0F, 2.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)),
-						PartPose.offset(-4.0F, 1.0F, -2.5F));
+								.texOffs(24, 29).addBox(0.0F, -1.0F, 0.0F, 2.0F, 10.0F, 5.0F, new CubeDeformation(0.2F)),
+						PartPose.offsetAndRotation(-4.0F, 1.0F, -2.5F, 0.0F, 0.0F, -0.7854F));
 
 				PartDefinition rightArm = root.addOrReplaceChild("right_arm",
 						CubeListBuilder.create()
