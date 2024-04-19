@@ -1,5 +1,8 @@
 package com.dotteam.armorweapons.set;
 
+import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
+import java.util.Optional;
+import javax.annotation.Nonnull;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -20,23 +23,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Optional;
-
-import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
 
 public abstract class ArmorSet {
 
     private final String name;
 
-    public ArmorSet(String name) {
-        this.name = name;
-    }
+    public ArmorSet(String name) { this.name = name; }
 
-    public String getName() {
-        return this.name;
-    }
+    public String getName() { return this.name; }
 
     @OnlyIn(Dist.CLIENT)
     public ModelLayerLocation getLayerId(EquipmentSlot slot) {
@@ -69,8 +63,8 @@ public abstract class ArmorSet {
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        if(entity instanceof AbstractClientPlayer playerEntity) {
-            if("slim".equals(playerEntity.getModelName())) {
+        if (entity instanceof AbstractClientPlayer playerEntity) {
+            if ("slim".equals(playerEntity.getModelName())) {
                 return MOD_ID + ":textures/models/armor/" + this.name + "_slim.png";
             }
         }
@@ -80,16 +74,15 @@ public abstract class ArmorSet {
 
     @OnlyIn(Dist.CLIENT)
     public void registerMesh(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        for(EquipmentSlot slot : EquipmentSlot.values()) {
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
 
-            this.getMesh(slot).ifPresent(mesh -> {
-                event.registerLayerDefinition(this.getLayerId(slot), () -> this.getLayer(mesh, slot));
-            });
+            this.getMesh(slot).ifPresent(mesh -> event.registerLayerDefinition(this.getLayerId(slot), () -> this.getLayer(mesh, slot)));
         }
     }
 
     /**
      * Checks if the entity in parameter has Alex model or not.
+     * 
      * @param living is the entity to study.
      * @return True if the entity has Alex model, False if it has Steve model.
      */
@@ -111,9 +104,10 @@ public abstract class ArmorSet {
         }
 
         @Override
-        public void setupAnim(@NotNull LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            //Fix the "breathing" and wrong head rotation on ArmorStands
-            if(entity instanceof ArmorStand entityAS) {
+        public void setupAnim(@Nonnull LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+                float headPitch) {
+            // Fix the "breathing" and wrong head rotation on ArmorStands
+            if (entity instanceof ArmorStand entityAS) {
                 float f = (float) Math.PI / 180F;
                 this.head.xRot = f * entityAS.getHeadPose().getX();
                 this.head.yRot = f * entityAS.getHeadPose().getY();
@@ -138,13 +132,9 @@ public abstract class ArmorSet {
             }
         }
 
-        public static float sinPI(float f) {
-            return Mth.sin(f * (float)Math.PI);
-        }
+        public static float sinPI(float f) { return Mth.sin(f * (float) Math.PI); }
 
-        public static float cosPI(float f) {
-            return Mth.cos(f * (float)Math.PI);
-        }
+        public static float cosPI(float f) { return Mth.cos(f * (float) Math.PI); }
     }
 
 }
