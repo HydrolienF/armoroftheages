@@ -1,16 +1,15 @@
 package com.dotteam.armorweapons;
 
+import java.util.Map;
 import com.dotteam.armorweapons.registry.DoTAWArmorSetsRegistry;
 import com.dotteam.armorweapons.registry.DoTAWItemsRegistry;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Map;
 
 @Mod(DoTArmorWeapons.MOD_ID)
 public class DoTArmorWeapons {
@@ -36,7 +35,7 @@ public class DoTArmorWeapons {
         }
     }
 
-    public void createCreativeTab(CreativeModeTabEvent.BuildContents event) {
+    public void createCreativeTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == HandlerCommon.DOT_TAB) {
             ForgeRegistries.ITEMS.getEntries().stream().filter(
                     entry -> entry

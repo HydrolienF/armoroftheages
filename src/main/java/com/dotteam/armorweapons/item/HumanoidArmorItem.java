@@ -18,7 +18,7 @@ public class HumanoidArmorItem extends ArmorItem implements Vanishable {
 
 	private final ArmorSet set;
 
-	public HumanoidArmorItem(ArmorSet set, ArmorMaterial material, EquipmentSlot slot) {
+	public HumanoidArmorItem(ArmorSet set, ArmorMaterial material, Type slot) {
 		super(material, slot, new Properties().stacksTo(1));
 		this.set = set;
 	}
@@ -43,8 +43,8 @@ public class HumanoidArmorItem extends ArmorItem implements Vanishable {
 
 	@Override
 	public EquipmentSlot getEquipmentSlot(ItemStack stackIn) {
-		if(stackIn.getItem() instanceof HumanoidArmorItem item) {
-			return item.getSlot();
+		if(stackIn.getItem() instanceof HumanoidArmorItem) {
+			return this.getType().getSlot();
 		}
 
 		return null;
@@ -52,7 +52,7 @@ public class HumanoidArmorItem extends ArmorItem implements Vanishable {
 
 	@Override
 	public int getMaxDamage(ItemStack stackIn) {
-		return this.material.getDurabilityForSlot(getEquipmentSlot(stackIn));
+		return this.material.getDurabilityForType(this.type);
 	}
 
 }
