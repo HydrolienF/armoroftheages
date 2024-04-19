@@ -65,7 +65,7 @@ public class CenturionArmorSet extends ArmorSet {
 								.texOffs(74, 12).addBox(-1.0F, -2.0F, 0.0F, 2.0F, 4.0F, 0.0F, new CubeDeformation(0.0F)),
 						PartPose.offset(-4.0F, 1.0F, -2.5F));
 
-				PartDefinition rightArm = body.addOrReplaceChild("right_arm",
+				PartDefinition rightArm = root.addOrReplaceChild("right_arm",
 						CubeListBuilder.create()
 								.texOffs(19, 47).addBox(isSteve ? -3.5F : -2.5F, -2.5F, -2.5F, isSteve ? 5.0F : 4.0F, 12.0F, 5.0F, new CubeDeformation(0.0F))
 								.texOffs(isSteve ? 39 : 37, 47).addBox(isSteve ? -3.5F : -2.5F, -2.5F, -2.5F, isSteve ? 5.0F : 4.0F, 12.0F, 5.0F, new CubeDeformation(0.25F)),
@@ -78,7 +78,7 @@ public class CenturionArmorSet extends ArmorSet {
 								.texOffs(74, 11).addBox(0.0F, -3.5F, -3.0F, 1.0F, 2.0F, 6.0F, new CubeDeformation(0.25F)),
 						PartPose.offset(-0.25F, -0.25F, 0.0F));
 
-				PartDefinition leftArm = body.addOrReplaceChild("left_arm",
+				PartDefinition leftArm = root.addOrReplaceChild("left_arm",
 						CubeListBuilder.create()
 								.texOffs(19, 47).addBox(-1.5F, -2.5F, -2.5F, isSteve ? 5.0F : 4.0F, 12.0F, 5.0F, new CubeDeformation(0.0F))
 								.texOffs(isSteve ? 39 : 37, 47).addBox(-1.5F, -2.5F, -2.5F, isSteve ? 5.0F : 4.0F, 12.0F, 5.0F, new CubeDeformation(0.25F)),
