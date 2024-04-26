@@ -1,5 +1,7 @@
 package com.dotteam.armorweapons.util;
 
+import java.util.function.Supplier;
+import org.jetbrains.annotations.NotNull;
 import com.dotteam.armorweapons.DoTAWConfig;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -10,9 +12,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Supplier;
 
 public class DoTBMaterials {
 

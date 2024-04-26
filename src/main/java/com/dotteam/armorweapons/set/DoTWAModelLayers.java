@@ -1,24 +1,22 @@
 package com.dotteam.armorweapons.set;
 
+import static com.dotteam.armorweapons.DoTAWConfig.JAPANESE_LIGHT_NAME;
+import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
+import java.util.Set;
+import java.util.stream.Stream;
 import com.google.common.collect.Sets;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ArmorItem.Type;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import java.util.Set;
-import java.util.stream.Stream;
-
-import static com.dotteam.armorweapons.DoTAWConfig.JAPANESE_LIGHT_NAME;
-import static com.dotteam.armorweapons.DoTArmorWeapons.MOD_ID;
 
 @OnlyIn(Dist.CLIENT)
 public class DoTWAModelLayers {
     private static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
-    public static final ModelLayerLocation JAPANESE_LIGHT_HELMET = register(JAPANESE_LIGHT_NAME, Type.HELMET);
+    public static final ModelLayerLocation JAPANESE_LIGHT_HELMET = register(JAPANESE_LIGHT_NAME, EquipmentSlot.HEAD);
 
-    private static ModelLayerLocation register(String armorSet, Type type) {
+    private static ModelLayerLocation register(String armorSet, EquipmentSlot type) {
         ModelLayerLocation modellayerlocation = new ModelLayerLocation(new ResourceLocation(MOD_ID, armorSet + "/" + type.getName()), "main");
         if (!ALL_MODELS.add(modellayerlocation)) {
             throw new IllegalStateException("Duplicate registration for " + modellayerlocation);
