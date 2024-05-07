@@ -31,8 +31,10 @@ public class CenturionArmorSet extends ArmorSet {
 		PartDefinition root = mesh.getRoot();
 
 		// Not working for now.
-		// boolean isSteve = !isSlimPlayerEntity(living);
-		boolean isSteve = false;
+		boolean isSteve = !isSlimPlayerEntity(living);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("isSteve: " + isSteve);
+		// boolean isSteve = false;
 
 		switch (slot) {
 			//@formatter:off
@@ -50,7 +52,6 @@ public class CenturionArmorSet extends ArmorSet {
 						CubeListBuilder.create().texOffs(75, -4).addBox(4.65F, -26.0F, 4.75F, 0.0F, 3.0F, 6.0F, new CubeDeformation(0.0F))
 								.addBox(-4.65F, -26.0F, 4.75F, 0.0F, 3.0F, 6.0F, new CubeDeformation(0.0F)),
 						PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.3927F, 0.0F, 0.0F));
-
 
 				break;
 			}

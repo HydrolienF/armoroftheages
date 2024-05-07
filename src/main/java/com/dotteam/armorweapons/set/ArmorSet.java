@@ -13,6 +13,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -86,7 +87,7 @@ public abstract class ArmorSet {
      * @return True if the entity has Alex model, False if it has Steve model.
      */
     protected boolean isSlimPlayerEntity(Entity entity) {
-        return entity instanceof AbstractClientPlayer player && "slim".equals(player.getModelName());
+        return entity instanceof AbstractClientPlayer player && player.getSkin().model().equals(PlayerSkin.Model.SLIM);
     }
 
     @OnlyIn(Dist.CLIENT)

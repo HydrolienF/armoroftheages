@@ -1,21 +1,22 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"o o",
-		"IiI",
-		"ooo"
-	],
-	"key": {
-		"i": {
-			"item": "minecraft:leather_chestplate"
-		},
-		"I": {
-			"tag": "forge:dyes/red"
-		},
-		"o": {
-			"tag": "forge:ingots/gold"
-		}
-	},
+	"category": "equipment",
+    "pattern": [
+        "G G",
+        "DLD",
+        "GGG"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:leather_chestplate"
+        },
+        "D": {
+            "item": "minecraft:red_dye"
+        },
+        "G": {
+            "item": "minecraft:gold_ingot"
+        }
+    },
 	"result": {
 		"item": "dotarmorweapons:centurion_armor_chest"
 	}

@@ -1,0 +1,57 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        "G G",
+        "DLD",
+        "GGG"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:leather_chestplate"
+        },
+        "D": {
+            "item": "minecraft:red_dye"
+        },
+        "G": {
+            "item": "minecraft:gold_ingot"
+        }
+    },
+    "result": {
+        "id": "minecraft:leather_chestplate",
+        "count": 1,
+        "components": {
+            "minecraft:custom_model_data": 56270001,
+            "minecraft:custom_data": {
+                "armoroftheages_set": "centurion"
+            },
+            "minecraft:max_damage": 400,
+			"minecraft:attribute_modifiers": {
+			  "modifiers": [
+				{
+				  "type": "minecraft:generic.armor",
+				  "uuid": [
+					1,1,1,36943
+				  ],
+				  "name": "generic.armor",
+				  "amount": 7,
+				  "operation": "add_value",
+				  "slot": "chest"
+				},
+				{
+					"type": "minecraft:generic.armor_toughness",
+					"uuid": [
+					  1,1,1,36944
+					],
+					"name": "generic.armor_toughness",
+					"amount": 3,
+					"operation": "add_value",
+					"slot": "chest"
+				  }
+			  ],
+			  "show_in_tooltip": true
+			},
+            "minecraft:item_name": "[\"\",{\"translate\":\"item.armoroftheages.centurion_chestplate\"}]"
+        }
+    }
+}
