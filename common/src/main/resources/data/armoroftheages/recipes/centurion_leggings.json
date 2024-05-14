@@ -1,0 +1,57 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+      "GLG",
+      "G G",
+      "D D"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:leather_leggings"
+        },
+        "D": {
+            "item": "minecraft:red_dye"
+        },
+        "G": {
+            "item": "minecraft:gold_ingot"
+        }
+    },
+    "result": {
+        "id": "armoroftheages:centurion_leggings",
+        "count": 1,
+        "components": {
+            "minecraft:custom_data": {
+                "armoroftheages_set": "centurion"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:max_damage": 400,
+            "minecraft:attribute_modifiers": {
+              "modifiers": [
+              {
+                "type": "minecraft:generic.armor",
+                "uuid": [
+                1,1,3,36943
+                ],
+                "name": "generic.armor",
+                "amount": 5,
+                "operation": "add_value",
+                "slot": "legs"
+              },
+              {
+                "type": "minecraft:generic.armor_toughness",
+                "uuid": [
+                  1,1,3,36944
+                ],
+                "name": "generic.armor_toughness",
+                "amount": 3,
+                "operation": "add_value",
+                "slot": "legs"
+                }
+              ],
+              "show_in_tooltip": true
+            },
+            "minecraft:item_name": "[\"\",{\"translate\":\"item.armoroftheages.centurion_leggings\"}]"
+        }
+    }
+}
