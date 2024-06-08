@@ -28,7 +28,7 @@ public class ForgeHumanoidArmorItem extends HumanoidArmorItem {
 	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 		consumer.accept(new IClientItemExtensions() {
 			private ArmorModelProvider armorModelProvider;
-			private HumanoidModel<?> model;
+			private HumanoidModel<LivingEntity> model;
 			public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel<?> defaultModel) {
 				if(this.armorModelProvider != ForgeHumanoidArmorItem.this.getModelProvider()){
 					this.armorModelProvider = ForgeHumanoidArmorItem.this.getModelProvider();
@@ -40,6 +40,22 @@ public class ForgeHumanoidArmorItem extends HumanoidArmorItem {
 					this.model.young = living.isBaby();
 					this.model.crouching = living.isShiftKeyDown();
 					this.model.riding = defaultModel.riding;
+					float limbSwingAmount = 0.0F;
+					float limbSwing = 0.0F;
+					// TODO Find a way to get the partial ticks, instead of using 0.
+					float partialTicks = 0.0F;
+					if (!living.isPassenger() && living.isAlive()) {
+						limbSwingAmount = living.walkAnimation.speed(partialTicks);
+						limbSwing = living.walkAnimation.position(partialTicks);
+						if (living.isBaby()) {
+							limbSwing *= 3.0F;
+						}
+						if (limbSwingAmount > 1.0F) {
+							limbSwingAmount = 1.0F;
+						}
+					}
+					// I use 0 for both netHeadYaw and headPitch, since they are both useless to animate the model.
+					this.model.setupAnim(living, limbSwing, limbSwingAmount, (float) living.tickCount, 0, 0);
 					return this.model;
 				}
 			}
