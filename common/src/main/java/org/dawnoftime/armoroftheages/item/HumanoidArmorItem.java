@@ -1,11 +1,8 @@
 package org.dawnoftime.armoroftheages.item;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
@@ -21,18 +18,14 @@ import java.util.List;
 import static org.dawnoftime.armoroftheages.Constants.MOD_ID;
 
 public class HumanoidArmorItem extends ArmorItem {
-    protected final String armorSetName;
-    public HumanoidArmorItem(String armorSetName, ArmorMaterial material, Type type) {
+    private final String armorPartName;
+    public HumanoidArmorItem(@NotNull String armorSetName, ArmorMaterial material, Type type) {
         super(material, type, new Properties().stacksTo(1));
-        this.armorSetName = armorSetName;
+        this.armorPartName = armorSetName + "_" + type.getSlot().getName();
     }
 
     public @NotNull ArmorModelProvider getModelProvider(){
-        return ModelProviderRegistry.REGISTRY.get(this.armorSetName);
-    }
-
-    public @NotNull ResourceLocation getTexture(Entity entity) {
-        return this.getModelProvider().getTexture(entity instanceof AbstractClientPlayer player && "slim".equals(player.getModelName()));
+        return ModelProviderRegistry.REGISTRY.get(this.armorPartName);
     }
 
     @Override

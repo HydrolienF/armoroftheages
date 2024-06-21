@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
+import org.dawnoftime.armoroftheages.client.ArmorModelProvider;
 import org.dawnoftime.armoroftheages.registry.ModelProviderRegistry;
 
 import static org.dawnoftime.armoroftheages.Constants.MOD_ID;
@@ -47,6 +48,11 @@ public class ArmorOfTheAges {
      * @param event Event called.
      */
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event){
-        ModelProviderRegistry.REGISTRY.forEach((name, provider) -> event.registerLayerDefinition(provider.getLayerLocation(), provider::createLayer));
+        ModelProviderRegistry.REGISTRY.forEach((name, provider) -> {
+            event.registerLayerDefinition(provider.getLayerLocation(), provider::createLayer);
+            if(provider instanceof ArmorModelProvider.MixedArmorModelProvider slimProvide){
+                event.registerLayerDefinition(slimProvide.getSlimLayerLocation(), slimProvide::createSlimLayer);
+            }
+        });
     }
 }

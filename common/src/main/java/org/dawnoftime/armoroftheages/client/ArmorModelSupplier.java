@@ -5,5 +5,5 @@ import net.minecraft.world.entity.LivingEntity;
 import org.dawnoftime.armoroftheages.client.models.ArmorModel;
 
 public interface ArmorModelSupplier {
-    ArmorModel<LivingEntity> create(ModelPart root);
+    <E extends LivingEntity> ArmorModel<E> create(ModelPart root, boolean isSlim);
 }

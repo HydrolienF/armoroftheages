@@ -3,11 +3,11 @@ package org.dawnoftime.armoroftheages.client.models;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import org.dawnoftime.armoroftheages.client.ArmorModelSupplier;
@@ -15,9 +15,11 @@ import org.dawnoftime.armoroftheages.client.ArmorModelSupplier;
 import javax.annotation.Nonnull;
 
 public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T> implements ArmorModelSupplier {
+    public final boolean isSlim;
 
-    public ArmorModel(ModelPart root) {
+    public ArmorModel(ModelPart root, boolean isSlim) {
         super(root);
+        this.isSlim = isSlim;
     }
 
     /**
@@ -30,16 +32,16 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
      *
      * @return A minimal mesh with all the part of the player model and their appropriate rotation positions.
      */
-    public static MeshDefinition templateLayerDefinition(CubeDeformation deformation, float scale) {
+    public static MeshDefinition templateLayerDefinition(float scale) {
         MeshDefinition mesh = new MeshDefinition();
         PartDefinition root = mesh.getRoot();
-        root.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, deformation), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
-        root.addOrReplaceChild("hat", CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, deformation.extend(0.5F)), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
-        root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, deformation), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
-        root.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(40, 16).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, deformation), PartPose.offset(-5.0F, 2.0F + scale, 0.0F));
-        root.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(40, 16).mirror().addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, deformation), PartPose.offset(5.0F, 2.0F + scale, 0.0F));
-        root.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, deformation), PartPose.offset(-1.9F, 12.0F + scale, 0.0F));
-        root.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(0, 16).mirror().addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, deformation), PartPose.offset(1.9F, 12.0F + scale, 0.0F));
+        root.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
+        root.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
+        root.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F + scale, 0.0F));
+        root.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.offset(-5.0F, 2.0F + scale, 0.0F));
+        root.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.offset(5.0F, 2.0F + scale, 0.0F));
+        root.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.offset(-1.9F, 12.0F + scale, 0.0F));
+        root.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.offset(1.9F, 12.0F + scale, 0.0F));
         return mesh;
     }
 
@@ -68,6 +70,30 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
             this.rightLeg.zRot = f * entityAS.getRightLegPose().getZ();
         } else {
             this.setupArmorPartAnim(entity, ageInTicks);
+        }
+    }
+
+    public void setPartVisibility(EquipmentSlot slot) {
+        this.setAllVisible(false);
+        switch (slot) {
+            case HEAD -> {
+                this.head.visible = true;
+                this.hat.visible = true;
+            }
+            case CHEST -> {
+                this.body.visible = true;
+                this.rightArm.visible = true;
+                this.leftArm.visible = true;
+            }
+            case LEGS -> {
+                this.body.visible = true;
+                this.rightLeg.visible = true;
+                this.leftLeg.visible = true;
+            }
+            case FEET -> {
+                this.rightLeg.visible = true;
+                this.leftLeg.visible = true;
+            }
         }
     }
 
