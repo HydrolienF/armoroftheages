@@ -45,20 +45,22 @@ public abstract class MixinHumanoidArmorLayer<T extends LivingEntity, M extends 
         if (itemStack.getItem() instanceof HumanoidArmorItem armorItem) {
             if (armorItem.getEquipmentSlot() == slot) {
                 ArmorModelProvider provider = armorItem.getModelProvider();
-                // First we get the model from the armorItem.
-                ArmorModel<?> model = provider.getArmorModel(entity);
-                // Now we will animate the model !
-                model.copyEntityModelPosition(this.getParentModel());
-                model.setPartVisibility(slot);
-                model.young = entity.isBaby();
-                model.crouching = entity.isShiftKeyDown();
-                model.riding = this.getParentModel().riding;
-                model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-                VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityTranslucent(armorItem.getModelProvider().getTexture(entity)));
-                model.renderToBuffer(stack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                if(provider != null){
+                    // First we get the model from the armorItem.
+                    ArmorModel<?> model = provider.getArmorModel(entity);
+                    // Now we will animate the model !
+                    model.copyEntityModelPosition(this.getParentModel());
+                    model.setPartVisibility(slot);
+                    model.young = entity.isBaby();
+                    model.crouching = entity.isShiftKeyDown();
+                    model.riding = this.getParentModel().riding;
+                    model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+                    VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityTranslucent(provider.getTexture(entity)));
+                    model.renderToBuffer(stack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 
-                if (itemStack.hasFoil()) {
-                    model.renderToBuffer(stack, buffer.getBuffer(RenderType.armorEntityGlint()), packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                    if (itemStack.hasFoil()) {
+                        model.renderToBuffer(stack, buffer.getBuffer(RenderType.armorEntityGlint()), packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                    }
                 }
             }
         }

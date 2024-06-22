@@ -5,7 +5,6 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.LivingEntity;
 import org.dawnoftime.armoroftheages.client.models.ArmorModel;
-import org.jetbrains.annotations.NotNull;
 
 public class HeadJapaneseLightArmorModel<T extends LivingEntity> extends ArmorModel<T> {
     private final ModelPart ribbonA;

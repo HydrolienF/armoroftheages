@@ -24,7 +24,7 @@ public class HumanoidArmorItem extends ArmorItem {
         this.armorPartName = armorSetName + "_" + type.getSlot().getName();
     }
 
-    public @NotNull ArmorModelProvider getModelProvider(){
+    public @Nullable ArmorModelProvider getModelProvider(){
         return ModelProviderRegistry.REGISTRY.get(this.armorPartName);
     }
 
