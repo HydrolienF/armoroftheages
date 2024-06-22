@@ -100,4 +100,17 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
     public static float sinPI(float f) { return Mth.sin(f * (float) Math.PI); }
 
     public static float cosPI(float f) { return Mth.cos(f * (float) Math.PI); }
+
+    public <M extends HumanoidModel<? extends LivingEntity>> void copyEntityModelPosition(M parentModel) {
+        this.leftArmPose = parentModel.leftArmPose;
+        this.rightArmPose = parentModel.rightArmPose;
+        this.crouching = parentModel.crouching;
+        this.head.copyFrom(parentModel.head);
+        this.hat.copyFrom(parentModel.hat);
+        this.body.copyFrom(parentModel.body);
+        this.rightArm.copyFrom(parentModel.rightArm);
+        this.leftArm.copyFrom(parentModel.leftArm);
+        this.rightLeg.copyFrom(parentModel.rightLeg);
+        this.leftLeg.copyFrom(parentModel.leftLeg);
+    }
 }
