@@ -50,5 +50,5 @@ public class ChestJapaneseLightArmorModel<T extends LivingEntity> extends ArmorM
     }
 
     @Override
-    protected void setupArmorPartAnim(@NotNull LivingEntity entity, float ageInTicks) {}
+    protected void setupArmorPartAnim(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
 }

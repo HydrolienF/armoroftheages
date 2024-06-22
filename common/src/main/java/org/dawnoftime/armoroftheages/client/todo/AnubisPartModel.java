@@ -36,18 +36,22 @@ public class AnubisPartModel<T extends LivingEntity> extends HumanoidArmorPartMo
 				this.head.texOffs(96, 48).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
 				this.head.texOffs(34, 0).addBox(-4.5F, -10.25F, -4.5F, 9.0F, 12.0F, 9.0F, 0.05F, false);
 				this.head.texOffs(0, 0).addBox(-4.0F, -10.0F, -6.0F, 8.0F, 7.0F, 9.0F, 0.0F, false);
+
 				this.ribbonLeft = new ModelRenderer(this);
 				this.ribbonLeft.setPos(4.75F, -8.0F, -4.386F);
 				setRotationAngle(this.ribbonLeft, 0.0F, -0.9599F, 0.0F);
 				this.ribbonLeft.texOffs(10, 16).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 10.0F, 0.0F, 0.0F, false);
+
 				ModelRenderer ribbonLeftNode = new ModelRenderer(this);
 				ribbonLeftNode.setPos(2.7151F, -6.9F, -4.168F);
 				setRotationAngle(ribbonLeftNode, 0.0F, 0.6109F, 0.0F);
 				ribbonLeftNode.texOffs(0, 5).addBox(0.1F, -2.1F, -0.032F, 2.0F, 2.0F, 2.0F, 0.1F, false);
+
 				this.ribbonRight = new ModelRenderer(this);
 				this.ribbonRight.setPos(-4.75F, -8.0F, -4.386F);
 				setRotationAngle(this.ribbonRight, 0.0F, 0.9599F, 0.0F);
 				this.ribbonRight.texOffs(10, 16).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 10.0F, 0.0F, 0.0F, true);
+
 				ModelRenderer ribbonRightNode = new ModelRenderer(this);
 				ribbonRightNode.setPos(-2.7151F, -6.9F, -4.168F);
 				setRotationAngle(ribbonRightNode, 0.0F, -0.6109F, 0.0F);

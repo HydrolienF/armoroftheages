@@ -13,4 +13,5 @@ public class Constants {
 	// Armor Sets
 	public static final String BAMBOO_HAT_NAME = "bamboo_hat";
 	public static final String JAPANESE_LIGHT_ARMOR_NAME = "japanese_light_armor";
+	public static final String ANUBIS_ARMOR_NAME = "anubis_armor";
 }

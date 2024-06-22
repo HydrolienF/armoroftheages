@@ -7,6 +7,7 @@ import org.dawnoftime.armoroftheages.item.HumanoidArmorItem;
 
 import static net.minecraft.world.item.ArmorItem.Type.*;
 import static net.minecraft.world.item.ArmorItem.Type.BOOTS;
+import static org.dawnoftime.armoroftheages.Constants.ANUBIS_ARMOR_NAME;
 import static org.dawnoftime.armoroftheages.Constants.JAPANESE_LIGHT_ARMOR_NAME;
 
 public final class ItemRegistry {
@@ -16,4 +17,8 @@ public final class ItemRegistry {
     public static final HumanoidArmorItem JAPANESE_LIGHT_ARMOR_CHEST = new HumanoidArmorItem(JAPANESE_LIGHT_ARMOR_NAME, DoTArmorMaterial.JAPANESE_LIGHT, CHESTPLATE);
     public static final HumanoidArmorItem JAPANESE_LIGHT_ARMOR_LEGS = new HumanoidArmorItem(JAPANESE_LIGHT_ARMOR_NAME, DoTArmorMaterial.JAPANESE_LIGHT, LEGGINGS);
     public static final HumanoidArmorItem JAPANESE_LIGHT_ARMOR_FEET = new HumanoidArmorItem(JAPANESE_LIGHT_ARMOR_NAME, DoTArmorMaterial.JAPANESE_LIGHT, BOOTS);
+    public static final HumanoidArmorItem ANUBIS_ARMOR_HEAD = new HumanoidArmorItem(ANUBIS_ARMOR_NAME, DoTArmorMaterial.ANUBIS, HELMET);
+    public static final HumanoidArmorItem ANUBIS_ARMOR_CHEST = new HumanoidArmorItem(ANUBIS_ARMOR_NAME, DoTArmorMaterial.ANUBIS, CHESTPLATE);
+    public static final HumanoidArmorItem ANUBIS_ARMOR_LEGS = new HumanoidArmorItem(ANUBIS_ARMOR_NAME, DoTArmorMaterial.ANUBIS, LEGGINGS);
+    public static final HumanoidArmorItem ANUBIS_ARMOR_FEET = new HumanoidArmorItem(ANUBIS_ARMOR_NAME, DoTArmorMaterial.ANUBIS, BOOTS);
 }

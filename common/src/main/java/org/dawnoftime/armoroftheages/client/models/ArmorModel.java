@@ -25,7 +25,7 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
     /**
      * Override this function to animate the model, instead of overriding {@link ArmorModel#setupAnim}.
      */
-    protected abstract void setupArmorPartAnim(@Nonnull LivingEntity entity, float ageInTicks);
+    protected abstract void setupArmorPartAnim(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch);
 
     /**
      * This function must be called before adding the parts in the other models !!!
@@ -69,7 +69,7 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
             this.rightLeg.yRot = f * entityAS.getRightLegPose().getY();
             this.rightLeg.zRot = f * entityAS.getRightLegPose().getZ();
         } else {
-            this.setupArmorPartAnim(entity, ageInTicks);
+            this.setupArmorPartAnim(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         }
     }
 
