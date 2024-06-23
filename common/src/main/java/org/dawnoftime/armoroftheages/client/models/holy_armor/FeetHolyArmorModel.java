@@ -30,14 +30,14 @@ public class FeetHolyArmorModel<T extends LivingEntity> extends ArmorModel<T> {
                 .texOffs(25, 43).addBox(-2.5F, 5.3F, -2.6F, 5.0F, 2.0F, 3.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 6).addBox(2.0F, 5.8F, -1.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.9F, 12.0F, 0.0F));
 
-        leg_left.addOrReplaceChild("leg_left_wing", CubeListBuilder.create().texOffs(0, 55).addBox(0.0F, -2.3F, 0.0F, 0.0F, 3.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.501F, 6.3F, -1.6F, -0.3491F, 0.3054F, 0.0F));
+        leg_left.addOrReplaceChild("leg_left_wing", CubeListBuilder.create().texOffs(0, 55).addBox(0.0F, -2.3F, 0.0F, 0.0F, 3.0F, 5.0F, CubeDeformation.NONE), PartPose.offsetAndRotation(2.501F, 6.3F, -1.6F, -0.3491F, 0.3054F, 0.0F));
 
         PartDefinition leg_right = root.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(66, 31).mirror().addBox(-2.5F, -0.7F, -2.5F, 5.0F, 13.0F, 5.0F, new CubeDeformation(-0.2F)).mirror(false)
                 .texOffs(48, 57).mirror().addBox(-2.5F, 10.3F, -2.5F, 5.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)).mirror(false)
                 .texOffs(25, 43).mirror().addBox(-2.5F, 5.3F, -2.6F, 5.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false)
                 .texOffs(0, 6).addBox(-3.0F, 5.8F, -1.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.9F, 12.0F, 0.0F));
 
-        leg_right.addOrReplaceChild("leg_right_wing", CubeListBuilder.create().texOffs(0, 55).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-2.501F, 6.3F, -1.6F, -0.1745F, -0.3054F, 0.0F));
+        leg_right.addOrReplaceChild("leg_right_wing", CubeListBuilder.create().texOffs(0, 55).mirror().addBox(0.0F, -2.3F, 0.0F, 0.0F, 3.0F, 5.0F, CubeDeformation.NONE).mirror(false), PartPose.offsetAndRotation(-2.501F, 6.3F, -1.6F, -0.1745F, -0.3054F, 0.0F));
         return LayerDefinition.create(meshdefinition, 128, 128);
     }
 

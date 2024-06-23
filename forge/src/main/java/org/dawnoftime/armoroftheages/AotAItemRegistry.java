@@ -13,10 +13,10 @@ import java.util.function.Supplier;
 import static org.dawnoftime.armoroftheages.Constants.*;
 
 public class AotAItemRegistry {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
-    public static final RegistryObject<Item> TAB_ICON = ITEMS.register(Constants.MOD_ID, () -> ItemRegistry.TAB_ICON);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+    public static final RegistryObject<Item> TAB_ICON = ITEMS.register(MOD_ID, () -> ItemRegistry.TAB_ICON);
     static{
-        ITEMS.register(Constants.BAMBOO_HAT_NAME, () -> ItemRegistry.BAMBOO_HAT);
+        ITEMS.register(BAMBOO_HAT_NAME, () -> ItemRegistry.BAMBOO_HAT);
         register(ANUBIS_ARMOR_NAME,         EquipmentSlot.HEAD,     () -> ItemRegistry.ANUBIS_ARMOR_HEAD);
         register(ANUBIS_ARMOR_NAME,         EquipmentSlot.CHEST,    () -> ItemRegistry.ANUBIS_ARMOR_CHEST);
         register(ANUBIS_ARMOR_NAME,         EquipmentSlot.LEGS,     () -> ItemRegistry.ANUBIS_ARMOR_LEGS);

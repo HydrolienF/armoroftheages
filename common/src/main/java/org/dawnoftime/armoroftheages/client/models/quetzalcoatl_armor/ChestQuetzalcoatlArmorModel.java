@@ -171,7 +171,7 @@ public class ChestQuetzalcoatlArmorModel<T extends LivingEntity> extends ArmorMo
         PartDefinition tail = body.addOrReplaceChild("tail", CubeListBuilder.create()
                         .texOffs(87, 21)
                         .addBox(0.0F, 0.0F, 0.0F, 2.0F, 6.0F, 2.0F, CubeDeformation.NONE),
-                PartPose.offsetAndRotation(-1.9225F, -1.3601F, -3.5F, 0.0F, 0.0F, 0.2182F));
+                PartPose.offsetAndRotation(-6.9225F, 0.0F, -3.5F, 0.0F, 0.0F, 0.2182F));
 
         PartDefinition tailTip = tail.addOrReplaceChild("tailTip", CubeListBuilder.create(),
                 PartPose.offset(0.5F, 6.0F, 0.5F));

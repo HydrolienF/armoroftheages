@@ -9,8 +9,6 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class AotAMaterials {
 
@@ -82,14 +80,12 @@ public class AotAMaterials {
 
 		@NotNull
 		@Override
-		@OnlyIn(Dist.CLIENT)
 		public String getName() {
 			return this.name;
 		}
 
 		@Override
 		public float getToughness() {
-			//return this.armorConfig.toughnessSupplier().get();
 			return this.toughness;
 		}
 
