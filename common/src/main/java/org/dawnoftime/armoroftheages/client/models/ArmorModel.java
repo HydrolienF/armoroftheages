@@ -73,30 +73,6 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
         }
     }
 
-    public void setPartVisibility(EquipmentSlot slot) {
-        this.setAllVisible(false);
-        switch (slot) {
-            case HEAD -> {
-                this.head.visible = true;
-                this.hat.visible = true;
-            }
-            case CHEST -> {
-                this.body.visible = true;
-                this.rightArm.visible = true;
-                this.leftArm.visible = true;
-            }
-            case LEGS -> {
-                this.body.visible = true;
-                this.rightLeg.visible = true;
-                this.leftLeg.visible = true;
-            }
-            case FEET -> {
-                this.rightLeg.visible = true;
-                this.leftLeg.visible = true;
-            }
-        }
-    }
-
     public static float sinPI(float f) { return Mth.sin(f * (float) Math.PI); }
 
     public static float cosPI(float f) { return Mth.cos(f * (float) Math.PI); }

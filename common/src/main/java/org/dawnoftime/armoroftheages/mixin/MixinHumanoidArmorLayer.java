@@ -50,7 +50,6 @@ public abstract class MixinHumanoidArmorLayer<T extends LivingEntity, M extends 
                     ArmorModel<?> model = provider.getArmorModel(entity);
                     // Now we will animate the model !
                     model.copyEntityModelPosition(this.getParentModel());
-                    model.setPartVisibility(slot);
                     model.young = entity.isBaby();
                     model.crouching = entity.isShiftKeyDown();
                     model.riding = this.getParentModel().riding;

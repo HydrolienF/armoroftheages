@@ -37,7 +37,7 @@ public class LegsAnubisArmorModel<T extends LivingEntity> extends ArmorModel<T> 
                         .texOffs(38, 32).addBox(-2.4F, 0.4F, -2.5F, 5.0F, 5.0F, 5.0F, new CubeDeformation(-0.05F)),
                 PartPose.offset(1.9F, 12.0F, 0.0F));
 
-        leftLeg.addOrReplaceChild("layerLegLeft", CubeListBuilder.create()
+        leftLeg.addOrReplaceChild("layerLegLeft", CubeListBuilder.create().mirror()
                         .texOffs(108, 18).addBox(-0.75F, -2.25F, -2.5F, 2.0F, 4.0F, 5.0F, new CubeDeformation(0.15F)),
                 PartPose.offsetAndRotation(1.85F, 1.4F, 0.0F, 0.0F, 0.0F, -0.1745F));
 

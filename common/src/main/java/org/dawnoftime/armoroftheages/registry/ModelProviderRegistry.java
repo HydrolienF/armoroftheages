@@ -11,6 +11,14 @@ import org.dawnoftime.armoroftheages.client.models.anubis_armor.ChestAnubisArmor
 import org.dawnoftime.armoroftheages.client.models.anubis_armor.FeetAnubisArmorModel;
 import org.dawnoftime.armoroftheages.client.models.anubis_armor.HeadAnubisArmorModel;
 import org.dawnoftime.armoroftheages.client.models.anubis_armor.LegsAnubisArmorModel;
+import org.dawnoftime.armoroftheages.client.models.holy_armor.ChestHolyArmorModel;
+import org.dawnoftime.armoroftheages.client.models.holy_armor.FeetHolyArmorModel;
+import org.dawnoftime.armoroftheages.client.models.holy_armor.HeadHolyArmorModel;
+import org.dawnoftime.armoroftheages.client.models.holy_armor.LegsHolyArmorModel;
+import org.dawnoftime.armoroftheages.client.models.iron_plate_armor.ChestIronPlateArmorModel;
+import org.dawnoftime.armoroftheages.client.models.iron_plate_armor.FeetIronPlateArmorModel;
+import org.dawnoftime.armoroftheages.client.models.iron_plate_armor.HeadIronPlateArmorModel;
+import org.dawnoftime.armoroftheages.client.models.iron_plate_armor.LegsIronPlateArmorModel;
 import org.dawnoftime.armoroftheages.client.models.japanese_light_armor.ChestJapaneseLightArmorModel;
 import org.dawnoftime.armoroftheages.client.models.japanese_light_armor.FeetJapaneseLightArmorModel;
 import org.dawnoftime.armoroftheages.client.models.japanese_light_armor.HeadJapaneseLightArmorModel;
@@ -19,6 +27,22 @@ import org.dawnoftime.armoroftheages.client.models.centurion_armor.ChestCenturio
 import org.dawnoftime.armoroftheages.client.models.centurion_armor.FeetCenturionArmorModel;
 import org.dawnoftime.armoroftheages.client.models.centurion_armor.HeadCenturionArmorModel;
 import org.dawnoftime.armoroftheages.client.models.centurion_armor.LegsCenturionArmorModel;
+import org.dawnoftime.armoroftheages.client.models.o_yoroi_armor.ChestOYoroiArmorModel;
+import org.dawnoftime.armoroftheages.client.models.o_yoroi_armor.FeetOYoroiArmorModel;
+import org.dawnoftime.armoroftheages.client.models.o_yoroi_armor.HeadOYoroiArmorModel;
+import org.dawnoftime.armoroftheages.client.models.o_yoroi_armor.LegsOYoroiArmorModel;
+import org.dawnoftime.armoroftheages.client.models.pharaoh_armor.ChestPharaohArmorModel;
+import org.dawnoftime.armoroftheages.client.models.pharaoh_armor.FeetPharaohArmorModel;
+import org.dawnoftime.armoroftheages.client.models.pharaoh_armor.HeadPharaohArmorModel;
+import org.dawnoftime.armoroftheages.client.models.pharaoh_armor.LegsPharaohArmorModel;
+import org.dawnoftime.armoroftheages.client.models.quetzalcoatl_armor.ChestQuetzalcoatlArmorModel;
+import org.dawnoftime.armoroftheages.client.models.quetzalcoatl_armor.FeetQuetzalcoatlArmorModel;
+import org.dawnoftime.armoroftheages.client.models.quetzalcoatl_armor.HeadQuetzalcoatlArmorModel;
+import org.dawnoftime.armoroftheages.client.models.quetzalcoatl_armor.LegsQuetzalcoatlArmorModel;
+import org.dawnoftime.armoroftheages.client.models.raijin_armor.ChestRaijinArmorModel;
+import org.dawnoftime.armoroftheages.client.models.raijin_armor.FeetRaijinArmorModel;
+import org.dawnoftime.armoroftheages.client.models.raijin_armor.HeadRaijinArmorModel;
+import org.dawnoftime.armoroftheages.client.models.raijin_armor.LegsRaijinArmorModel;
 
 import static org.dawnoftime.armoroftheages.Constants.*;
 
@@ -35,10 +59,35 @@ public class ModelProviderRegistry {
         register(CENTURION_ARMOR_NAME, EquipmentSlot.CHEST, ChestCenturionArmorModel::new, ChestCenturionArmorModel::createLayerDefinition, ChestCenturionArmorModel::createSlimLayerDefinition);
         register(CENTURION_ARMOR_NAME, EquipmentSlot.LEGS, LegsCenturionArmorModel::new, LegsCenturionArmorModel::createLayerDefinition);
         register(CENTURION_ARMOR_NAME, EquipmentSlot.FEET, FeetCenturionArmorModel::new, FeetCenturionArmorModel::createLayerDefinition);
+        register(HOLY_ARMOR_NAME, EquipmentSlot.HEAD, HeadHolyArmorModel::new, HeadHolyArmorModel::createLayerDefinition);
+        register(HOLY_ARMOR_NAME, EquipmentSlot.CHEST, ChestHolyArmorModel::new, ChestHolyArmorModel::createLayerDefinition, ChestHolyArmorModel::createSlimLayerDefinition);
+        register(HOLY_ARMOR_NAME, EquipmentSlot.LEGS, LegsHolyArmorModel::new, LegsHolyArmorModel::createLayerDefinition);
+        register(HOLY_ARMOR_NAME, EquipmentSlot.FEET, FeetHolyArmorModel::new, FeetHolyArmorModel::createLayerDefinition);
+        register(IRON_PLATE_ARMOR_NAME, EquipmentSlot.HEAD, HeadIronPlateArmorModel::new, HeadIronPlateArmorModel::createLayerDefinition);
+        register(IRON_PLATE_ARMOR_NAME, EquipmentSlot.CHEST, ChestIronPlateArmorModel::new, ChestIronPlateArmorModel::createLayerDefinition, ChestIronPlateArmorModel::createSlimLayerDefinition);
+        register(IRON_PLATE_ARMOR_NAME, EquipmentSlot.LEGS, LegsIronPlateArmorModel::new, LegsIronPlateArmorModel::createLayerDefinition);
+        register(IRON_PLATE_ARMOR_NAME, EquipmentSlot.FEET, FeetIronPlateArmorModel::new, FeetIronPlateArmorModel::createLayerDefinition);
         register(JAPANESE_LIGHT_ARMOR_NAME, EquipmentSlot.HEAD, HeadJapaneseLightArmorModel::new, HeadJapaneseLightArmorModel::createLayerDefinition);
         register(JAPANESE_LIGHT_ARMOR_NAME, EquipmentSlot.CHEST, ChestJapaneseLightArmorModel::new, ChestJapaneseLightArmorModel::createLayerDefinition, ChestJapaneseLightArmorModel::createSlimLayerDefinition);
         register(JAPANESE_LIGHT_ARMOR_NAME, EquipmentSlot.LEGS, LegsJapaneseLightArmorModel::new, LegsJapaneseLightArmorModel::createLayerDefinition);
         register(JAPANESE_LIGHT_ARMOR_NAME, EquipmentSlot.FEET, FeetJapaneseLightArmorModel::new, FeetJapaneseLightArmorModel::createLayerDefinition);
+        register(O_YOROI_ARMOR_NAME, EquipmentSlot.HEAD, HeadOYoroiArmorModel::new, HeadOYoroiArmorModel::createLayerDefinition);
+        register(O_YOROI_ARMOR_NAME, EquipmentSlot.CHEST, ChestOYoroiArmorModel::new, ChestOYoroiArmorModel::createLayerDefinition, ChestOYoroiArmorModel::createSlimLayerDefinition);
+        register(O_YOROI_ARMOR_NAME, EquipmentSlot.LEGS, LegsOYoroiArmorModel::new, LegsOYoroiArmorModel::createLayerDefinition);
+        register(O_YOROI_ARMOR_NAME, EquipmentSlot.FEET, FeetOYoroiArmorModel::new, FeetOYoroiArmorModel::createLayerDefinition);
+        register(PHARAOH_ARMOR_NAME, EquipmentSlot.HEAD, HeadPharaohArmorModel::new, HeadPharaohArmorModel::createLayerDefinition);
+        register(PHARAOH_ARMOR_NAME, EquipmentSlot.CHEST, ChestPharaohArmorModel::new, ChestPharaohArmorModel::createLayerDefinition, ChestPharaohArmorModel::createSlimLayerDefinition);
+        register(PHARAOH_ARMOR_NAME, EquipmentSlot.LEGS, LegsPharaohArmorModel::new, LegsPharaohArmorModel::createLayerDefinition);
+        register(PHARAOH_ARMOR_NAME, EquipmentSlot.FEET, FeetPharaohArmorModel::new, FeetPharaohArmorModel::createLayerDefinition);
+        register(QUETZALCOATL_ARMOR_NAME, EquipmentSlot.HEAD, HeadQuetzalcoatlArmorModel::new, HeadQuetzalcoatlArmorModel::createLayerDefinition);
+        register(QUETZALCOATL_ARMOR_NAME, EquipmentSlot.CHEST, ChestQuetzalcoatlArmorModel::new, ChestQuetzalcoatlArmorModel::createLayerDefinition, ChestQuetzalcoatlArmorModel::createSlimLayerDefinition);
+        register(QUETZALCOATL_ARMOR_NAME, EquipmentSlot.LEGS, LegsQuetzalcoatlArmorModel::new, LegsQuetzalcoatlArmorModel::createLayerDefinition);
+        register(QUETZALCOATL_ARMOR_NAME, EquipmentSlot.FEET, FeetQuetzalcoatlArmorModel::new, FeetQuetzalcoatlArmorModel::createLayerDefinition);
+        register(RAIJIN_ARMOR_NAME, EquipmentSlot.HEAD, HeadRaijinArmorModel::new, HeadRaijinArmorModel::createLayerDefinition, HeadRaijinArmorModel::createSlimLayerDefinition);
+        register(RAIJIN_ARMOR_NAME, EquipmentSlot.CHEST, ChestRaijinArmorModel::new, ChestRaijinArmorModel::createLayerDefinition, ChestRaijinArmorModel::createSlimLayerDefinition);
+        register(RAIJIN_ARMOR_NAME, EquipmentSlot.LEGS, LegsRaijinArmorModel::new, LegsRaijinArmorModel::createLayerDefinition, LegsRaijinArmorModel::createSlimLayerDefinition);
+        register(RAIJIN_ARMOR_NAME, EquipmentSlot.FEET, FeetRaijinArmorModel::new, FeetRaijinArmorModel::createLayerDefinition);
+
     }
 
     private static void register(String armorName, EquipmentSlot slot, ArmorModelSupplier armorModelSupplier, Supplier<LayerDefinition> layerDefinition){

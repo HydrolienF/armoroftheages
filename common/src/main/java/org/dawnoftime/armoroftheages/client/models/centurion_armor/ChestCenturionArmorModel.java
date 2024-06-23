@@ -8,7 +8,7 @@ import org.dawnoftime.armoroftheages.client.models.ArmorModel;
 
 public class ChestCenturionArmorModel<T extends LivingEntity> extends ArmorModel<T> {
 
-    public <E extends LivingEntity> ChestCenturionArmorModel(ModelPart root, boolean isSlim) {
+    public ChestCenturionArmorModel(ModelPart root, boolean isSlim) {
         super(root, isSlim);
     }
 
