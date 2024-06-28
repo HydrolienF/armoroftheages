@@ -55,10 +55,10 @@ public abstract class MixinHumanoidArmorLayer<T extends LivingEntity, M extends 
                     model.riding = this.getParentModel().riding;
                     model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
                     VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityTranslucent(provider.getTexture(entity)));
-                    model.renderToBuffer(stack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                    model.renderToBuffer(stack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY);
 
                     if (itemStack.hasFoil()) {
-                        model.renderToBuffer(stack, buffer.getBuffer(RenderType.armorEntityGlint()), packedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+                        model.renderToBuffer(stack, buffer.getBuffer(RenderType.armorEntityGlint()), packedLight, OverlayTexture.NO_OVERLAY);
                     }
                 }
             }

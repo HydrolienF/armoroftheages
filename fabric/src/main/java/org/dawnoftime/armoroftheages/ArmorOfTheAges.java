@@ -33,7 +33,7 @@ public class ArmorOfTheAges implements ModInitializer {
         AotAItemRegistry.init();
 
         // Creative inventory init
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, MOD_ID), CREATIVE_MODE_TAB);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, MOD_ID), CREATIVE_MODE_TAB);
 
         // Client Side init
         if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {

@@ -153,7 +153,7 @@ public class AotAArmorMaterialRegistry {
 	 * @return A Holder containing the created ArmorMaterial.
 	 */
 	private static Holder<ArmorMaterial> register(String name, int helmetDef, int chestDef, int legsDef, int feetDef, int globalDef, int enchantability, float toughness, float knockbackRes, Holder<SoundEvent> sound, Supplier<Ingredient> repairSupplier){
-		return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, new ResourceLocation(MOD_ID, name), new ArmorMaterial(
+		return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, ResourceLocation.fromNamespaceAndPath(MOD_ID, name), new ArmorMaterial(
 				Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
 					map.put(ArmorItem.Type.BOOTS, feetDef);
 					map.put(ArmorItem.Type.LEGGINGS, legsDef);

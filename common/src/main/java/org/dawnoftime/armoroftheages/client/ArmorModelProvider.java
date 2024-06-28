@@ -17,7 +17,7 @@ import static org.dawnoftime.armoroftheages.Constants.MOD_ID;
 
 // Client side
 public class ArmorModelProvider {
-    private static final ResourceLocation PLAYER_RESOURCE_LOCATION = new ResourceLocation("minecraft:player");
+    private static final ResourceLocation PLAYER_RESOURCE_LOCATION = ResourceLocation.fromNamespaceAndPath("minecraft", "player");
 
     public static ArmorModelProvider create(String armorName, EquipmentSlot slot, ArmorModelSupplier modelSupplier, Supplier<LayerDefinition> layerDefinitionSupplier){
         return new ArmorModelProvider(armorName, slot, modelSupplier, layerDefinitionSupplier);
@@ -37,7 +37,7 @@ public class ArmorModelProvider {
         this.layerDefinitionSupplier = layerDefinitionSupplier;
         this.modelSupplier = modelSupplier;
         this.modelLayerLocation = new ModelLayerLocation(PLAYER_RESOURCE_LOCATION, armorName + "_" + slot.name().toLowerCase());
-        this.resourceLocations = new ResourceLocation(MOD_ID, "textures/models/armor/" + armorName + ".png");
+        this.resourceLocations = ResourceLocation.fromNamespaceAndPath(MOD_ID, "textures/models/armor/" + armorName + ".png");
     }
 
     @NotNull
@@ -75,7 +75,7 @@ public class ArmorModelProvider {
             super(armorName, slot, modelSupplier, layerDefinitionSupplier);
             this.slimLayerDefinitionSupplier = slimLayerDefinitionSupplier;
             this.slimModelLayerLocation = new ModelLayerLocation(PLAYER_RESOURCE_LOCATION, armorName + "_" + slot.name().toLowerCase() + "_slim");
-            this.slimResourceLocations = new ResourceLocation(MOD_ID, "textures/models/armor/" + armorName + "_slim.png");
+            this.slimResourceLocations = ResourceLocation.fromNamespaceAndPath(MOD_ID, "textures/models/armor/" + armorName + "_slim.png");
         }
 
         @NotNull

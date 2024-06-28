@@ -66,13 +66,13 @@ public class AotAItemRegistry {
     }
 
     public static void register(String name, Item item){
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, name), item);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, name), item);
         ITEMS.add(item);
     }
 
     public static void register(String armorSetName, Holder<ArmorMaterial> material, ArmorItem.Type slot){
         Item item = new HumanoidArmorItem(armorSetName, material, slot);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, armorSetName + "_" + slot.getSlot().getName()), item);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, armorSetName + "_" + slot.getSlot().getName()), item);
         ITEMS.add(item);
     }
 }
