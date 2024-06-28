@@ -3,16 +3,17 @@ package org.dawnoftime.armoroftheages;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.dawnoftime.armoroftheages.client.ArmorModelProvider;
 import org.dawnoftime.armoroftheages.registry.ModelProviderRegistry;
 
+import static org.dawnoftime.armoroftheages.AotAArmorMaterialRegistry.ARMOR_MATERIALS;
 import static org.dawnoftime.armoroftheages.Constants.MOD_ID;
 import static org.dawnoftime.armoroftheages.AotAItemRegistry.ITEMS;
 import static org.dawnoftime.armoroftheages.AotAItemRegistry.TAB_ICON;
@@ -21,8 +22,9 @@ import static org.dawnoftime.armoroftheages.AotAItemRegistry.TAB_ICON;
 public class ArmorOfTheAges {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    public ArmorOfTheAges() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public ArmorOfTheAges(IEventBus modEventBus, ModContainer modContainer) {
+        // Materials init
+        ARMOR_MATERIALS.register(modEventBus);
 
         // Items init
         ITEMS.register(modEventBus);

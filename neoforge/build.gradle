@@ -10,6 +10,16 @@ def at = file('src/main/resources/META-INF/accesstransformer.cfg')
 if (at.exists()) {
     minecraft.accessTransformers.file at
 }
+
+repositories {
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 runs {
     configureEach {
         modSource project.sourceSets.main
@@ -35,4 +45,9 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
+
+    // Both numbers comes from Curse. The first number is the project_id (on the right) and the second one is the file_id (in the URL)
+    runtimeOnly "curse.maven:jei-238222:5466528" // JEI (Just Enough Items)
+    //runtimeOnly "curse.maven:citadel-331936:5143956" // Citadel
+    //runtimeOnly "curse.maven:rats-323596:4802123" // Rats
 }

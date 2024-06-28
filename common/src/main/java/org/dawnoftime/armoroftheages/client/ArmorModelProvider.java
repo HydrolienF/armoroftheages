@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -54,7 +55,7 @@ public class ArmorModelProvider {
     }
 
     public static boolean isSlim(Entity entity){
-        return entity instanceof AbstractClientPlayer player && "slim".equals(player.getModelName());
+        return entity instanceof AbstractClientPlayer player && player.getSkin().model() == PlayerSkin.Model.SLIM;
     }
 
     public ArmorModel<?> getArmorModel(Entity entity) {

@@ -31,7 +31,7 @@ public abstract class MixinHumanoidArmorLayer<T extends LivingEntity, M extends 
     /**
      * I created a custom render function because MC doesn't pass many useful parameters to animate the armor, such as partial ticks or limbSwing.
      */
-    @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At("HEAD"))
+    @Inject(method = "Lnet/minecraft/client/renderer/entity/layers/HumanoidArmorLayer;render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At("HEAD"))
     public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci){
         this.armorOfTheAges$renderCustomArmor(poseStack, buffer, livingEntity, EquipmentSlot.HEAD, packedLight, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         this.armorOfTheAges$renderCustomArmor(poseStack, buffer, livingEntity, EquipmentSlot.CHEST, packedLight, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);

@@ -7,12 +7,10 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import org.dawnoftime.armoroftheages.client.ArmorModelSupplier;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T> implements ArmorModelSupplier {
     public final boolean isSlim;
@@ -46,7 +44,7 @@ public abstract class ArmorModel<T extends LivingEntity> extends HumanoidModel<T
     }
 
     @Override
-    public void setupAnim(@Nonnull LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(@NotNull LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         // Fix the "breathing" and wrong head rotation on ArmorStands
         if (entity instanceof ArmorStand entityAS) {
             float f = (float) Math.PI / 180F;
