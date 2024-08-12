@@ -27,42 +27,42 @@ public class AotAItemRegistry {
 
         // Item registry
         register(BAMBOO_HAT_NAME, new HatItem());
-        register(ANUBIS_ARMOR_NAME, ANUBIS, HELMET);
-        register(ANUBIS_ARMOR_NAME, ANUBIS, CHESTPLATE);
-        register(ANUBIS_ARMOR_NAME, ANUBIS, LEGGINGS);
-        register(ANUBIS_ARMOR_NAME, ANUBIS, BOOTS);
-        register(CENTURION_ARMOR_NAME, CENTURION, HELMET);
-        register(CENTURION_ARMOR_NAME, CENTURION, CHESTPLATE);
-        register(CENTURION_ARMOR_NAME, CENTURION, LEGGINGS);
-        register(CENTURION_ARMOR_NAME, CENTURION, BOOTS);
-        register(HOLY_ARMOR_NAME, HOLY, HELMET);
-        register(HOLY_ARMOR_NAME, HOLY, CHESTPLATE);
-        register(HOLY_ARMOR_NAME, HOLY, LEGGINGS);
-        register(HOLY_ARMOR_NAME, HOLY, BOOTS);
-        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, HELMET);
-        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, CHESTPLATE);
-        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, LEGGINGS);
-        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, BOOTS);
-        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, HELMET);
-        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, CHESTPLATE);
-        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, LEGGINGS);
-        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, BOOTS);
-        register(O_YOROI_ARMOR_NAME, O_YOROI, HELMET);
-        register(O_YOROI_ARMOR_NAME, O_YOROI, CHESTPLATE);
-        register(O_YOROI_ARMOR_NAME, O_YOROI, LEGGINGS);
-        register(O_YOROI_ARMOR_NAME, O_YOROI, BOOTS);
-        register(PHARAOH_ARMOR_NAME, PHARAOH, HELMET);
-        register(PHARAOH_ARMOR_NAME, PHARAOH, CHESTPLATE);
-        register(PHARAOH_ARMOR_NAME, PHARAOH, LEGGINGS);
-        register(PHARAOH_ARMOR_NAME, PHARAOH, BOOTS);
-        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, HELMET);
-        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, CHESTPLATE);
-        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, LEGGINGS);
-        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, BOOTS);
-        register(RAIJIN_ARMOR_NAME, RAIJIN, HELMET);
-        register(RAIJIN_ARMOR_NAME, RAIJIN, CHESTPLATE);
-        register(RAIJIN_ARMOR_NAME, RAIJIN, LEGGINGS);
-        register(RAIJIN_ARMOR_NAME, RAIJIN, BOOTS);
+        register(ANUBIS_ARMOR_NAME, ANUBIS, HELMET, 25);
+        register(ANUBIS_ARMOR_NAME, ANUBIS, CHESTPLATE, 25);
+        register(ANUBIS_ARMOR_NAME, ANUBIS, LEGGINGS, 25);
+        register(ANUBIS_ARMOR_NAME, ANUBIS, BOOTS, 25);
+        register(CENTURION_ARMOR_NAME, CENTURION, HELMET, 22);
+        register(CENTURION_ARMOR_NAME, CENTURION, CHESTPLATE, 22);
+        register(CENTURION_ARMOR_NAME, CENTURION, LEGGINGS, 22);
+        register(CENTURION_ARMOR_NAME, CENTURION, BOOTS, 22);
+        register(HOLY_ARMOR_NAME, HOLY, HELMET, 40);
+        register(HOLY_ARMOR_NAME, HOLY, CHESTPLATE, 40);
+        register(HOLY_ARMOR_NAME, HOLY, LEGGINGS, 40);
+        register(HOLY_ARMOR_NAME, HOLY, BOOTS, 40);
+        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, HELMET, 25);
+        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, CHESTPLATE, 25);
+        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, LEGGINGS, 25);
+        register(IRON_PLATE_ARMOR_NAME, IRON_PLATE, BOOTS, 25);
+        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, HELMET, 12);
+        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, CHESTPLATE, 12);
+        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, LEGGINGS, 12);
+        register(JAPANESE_LIGHT_ARMOR_NAME, JAPANESE_LIGHT, BOOTS, 12);
+        register(O_YOROI_ARMOR_NAME, O_YOROI, HELMET, 20);
+        register(O_YOROI_ARMOR_NAME, O_YOROI, CHESTPLATE, 20);
+        register(O_YOROI_ARMOR_NAME, O_YOROI, LEGGINGS, 20);
+        register(O_YOROI_ARMOR_NAME, O_YOROI, BOOTS, 20);
+        register(PHARAOH_ARMOR_NAME, PHARAOH, HELMET, 10);
+        register(PHARAOH_ARMOR_NAME, PHARAOH, CHESTPLATE, 10);
+        register(PHARAOH_ARMOR_NAME, PHARAOH, LEGGINGS, 10);
+        register(PHARAOH_ARMOR_NAME, PHARAOH, BOOTS, 10);
+        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, HELMET, 25);
+        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, CHESTPLATE, 25);
+        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, LEGGINGS, 25);
+        register(QUETZALCOATL_ARMOR_NAME, QUETZALCOATL, BOOTS, 25);
+        register(RAIJIN_ARMOR_NAME, RAIJIN, HELMET, 35);
+        register(RAIJIN_ARMOR_NAME, RAIJIN, CHESTPLATE, 35);
+        register(RAIJIN_ARMOR_NAME, RAIJIN, LEGGINGS, 35);
+        register(RAIJIN_ARMOR_NAME, RAIJIN, BOOTS, 35);
     }
 
     public static void register(String name, Item item){
@@ -70,8 +70,8 @@ public class AotAItemRegistry {
         ITEMS.add(item);
     }
 
-    public static void register(String armorSetName, Holder<ArmorMaterial> material, ArmorItem.Type slot){
-        Item item = new HumanoidArmorItem(armorSetName, material, slot);
+    public static void register(String armorSetName, Holder<ArmorMaterial> material, ArmorItem.Type slot, int durabilityFactor){
+        Item item = new HumanoidArmorItem(armorSetName, material, slot, durabilityFactor);
         Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, armorSetName + "_" + slot.getSlot().getName()), item);
         ITEMS.add(item);
     }
