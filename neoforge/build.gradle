@@ -50,7 +50,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     // Both numbers comes from Curse. The first number is the project_id (on the right) and the second one is the file_id (in the URL)
-    runtimeOnly "curse.maven:jei-238222:5466551" // JEI (Just Enough Items)
+    // runtimeOnly "curse.maven:jei-238222:5466551" // JEI (Just Enough Items) // Still in 1.21.1...
     //runtimeOnly "curse.maven:citadel-331936:5143956" // Citadel
     //runtimeOnly "curse.maven:rats-323596:4802123" // Rats
 
